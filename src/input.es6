@@ -12,8 +12,6 @@ export default class Input{
 
         let position = this.user.getPosition();
 
-        this.socket.sendPosition(position.x, position.y); //functie die gestart wordt(method), met de parameters x en y
-                                                         // kan niet bij de gewone x en y, die staan in de getLocation daar moet je ze vandaan halen
     
         });
     }
