@@ -22,7 +22,10 @@ export default class Player {
 		this.properties.y += this.properties.speed.y;
 		if (this.properties.y > window.innerHeight - 100 - this.properties.height){
 			this.properties.speed.y = 0;
+
 			this.properties.y = window.innerHeight - 100 - this.properties.height;
+
+			this.properties.jumping = false;
 		}
 
 	}
@@ -37,7 +40,6 @@ export default class Player {
 	}
 
 	move(y) {
-		// console.log(this.properties.speed.y);
 		this.properties.speed.y -= y;
     }
 
