@@ -7,7 +7,7 @@
     "start": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Niels van de Pas <ik@nielsvandepas.nl>",
+  "author": "Niels van de Pas <ik@nielsvandepas.nl>, Nienke van Poppel <ncjpoppe@avans.nl>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
