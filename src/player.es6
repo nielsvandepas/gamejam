@@ -44,17 +44,15 @@ export default class Player {
     }
 
     die() {
+		console.log('u died, u f*cking mron!');
     }
 
 	collided(collider) {
-        if(collider.constructor.name === "Obstacle"){ // als speler collide met een obstacle
+		console.log('collided');
+
+        if(collider.constructor.name === "Obstacle") { // als speler collide met een obstacle
             this.properties.speed.y = 0;
             this.die();
-        }
-
-        if (collider.constructor.name === "Floor"){ // als speler collide met floor
-			this.properties.speed.y = 0;
-			console.log("has collided")
         }
 	}
 }

@@ -16,19 +16,18 @@ export default class Physics {
 					return false;
 
 				let left = collider.properties.x + collider.properties.width >= element.properties.x;
-
-				let right = collider.properties.x <= element.properties.x + collider.properties.width;
+				let right = collider.properties.x <= element.properties.x + element.properties.width;
 				let top = collider.properties.y + collider.properties.height >= element.properties.y;
-				let bottom = collider.properties.y <= element.properties.y + collider.properties.height;
+				let bottom = collider.properties.y <= element.properties.y + element.properties.height;
 
-				return (left && right) || (top && bottom);
+				return (left && right) && (top && bottom);
 			});
 
 			if (collidingObject !== undefined) {
 				collider.collided(collidingObject);
 				collidingObject.collided(collider);
 
-				checkCache.pop(collidingObject); // pop haalt iets uit je array 
+				checkCache.pop(collidingObject); // pop haalt iets uit je array
 			}
 
 			checkCache.pop(collider);
