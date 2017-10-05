@@ -1,16 +1,16 @@
 export default class Input{
-    constructor(user){
-        this.user = user;
+    constructor(player){
+        this.player = player;
 
     window.addEventListener("keydown", (e) => {
         console.log ('keydown');
 
         if (e.keyCode == 38 | e.keyCode == 32)
-            this.user.move('up');
+            this.player.move('up');
         if (e.keyCode == 40)
-            this.user.move('down');
+            this.player.move('down');
 
-        let position = this.user.getPosition();
+        let position = this.player.getPosition();
 
     
         });
