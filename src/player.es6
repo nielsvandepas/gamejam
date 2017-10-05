@@ -20,10 +20,10 @@ export default class Player {
 	updatePosition() { //functie die positie update
 		this.properties.gravity.gravitate(); //voert de gravity functie uit, van gravity.es6
 		this.properties.y += this.properties.speed.y;
-		if (this.properties.y > window.innerHeight - 100 - this.properties.height){
+		if (this.properties.y > window.innerHeight - this.properties.height){
 			this.properties.speed.y = 0;
 
-			this.properties.y = window.innerHeight - 100 - this.properties.height;
+			this.properties.y = window.innerHeight - this.properties.height;
 
 			this.properties.jumping = false; //springen om true te maken, gevallen zijn voor false 
 		}
