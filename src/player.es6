@@ -8,7 +8,7 @@ export default class Player {
 			width: 10,
 			height: 10,
 			color: '#000000',
-			gravity: 1,
+			gravity: new Gravity(this, 1),
 			speed: {
 				x: 0,
 				y: 0
@@ -16,7 +16,16 @@ export default class Player {
 		}
 	}
 
+	updatePosition() {
+		this.properties.gravity.gravitate();
+
+		this.properties.x = this.properties.speed.x;
+		this.properties.y = this.properties.speed.y;
+	}
+
 	getPosition() {
+		updatePosition();
+
 		return {
 			x: this.properties.x,
 			y: this.properties.y
