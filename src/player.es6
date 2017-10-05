@@ -35,4 +35,8 @@ export default class Player {
 	move(x, y) {
 
 	}
+
+	collided(collider) {
+
+	}
 }
