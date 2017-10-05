@@ -41,12 +41,12 @@ export default class Player {
     }
 
 	collided(collider) {
-        if(typeof collider === "obstacle"){ // als speler collide met een obstacle
+        if(collider.constructor.name === "Obstacle"){ // als speler collide met een obstacle
             this.properties.speed.y = 0;
             this.die();
         }
 
-        if (typeof collider === "floor"){ // als speler collide met floor
+        if (collider.constructor.name === "Floor"){ // als speler collide met floor
             this.properties.speed.y = 0;
         }
 	}

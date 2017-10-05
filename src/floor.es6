@@ -10,6 +10,6 @@ export default class Floor {
     }
 
     collided(collider){
-
+		console.log('colliding with ' + collider.properties.color);
     }
 }
