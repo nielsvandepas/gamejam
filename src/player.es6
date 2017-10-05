@@ -35,8 +35,7 @@ export default class Player {
 		}
 	}
 
-	move(x, y) {
-		this.properties.speed.x += x;
+	move(y) {
 		this.properties.speed.y += y;
     }
 
