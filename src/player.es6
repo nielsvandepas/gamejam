@@ -8,7 +8,8 @@ export default class Player {
 			width: 10,
 			height: 10,
 			color: '#000000',
-			gravity: new Gravity(this, 1), //constructor van gravity.es6 bestand
+			jumping: false,
+			gravity: new Gravity(this, 0.2), //constructor van gravity.es6 bestand
 			speed: {
 				x: 0,
 				y: 0
@@ -18,9 +19,9 @@ export default class Player {
 
 	updatePosition() { //functie die positie update
 		this.properties.gravity.gravitate(); //voert de gravity functie uit, van gravity.es6
-		this.properties.x += this.properties.speed.x;
 		this.properties.y += this.properties.speed.y;
 		if (this.properties.y > window.innerHeight - 100 - this.properties.height){
+			this.properties.speed.y = 0;
 			this.properties.y = window.innerHeight - 100 - this.properties.height;
 		}
 
@@ -36,7 +37,8 @@ export default class Player {
 	}
 
 	move(y) {
-		this.properties.speed.y += y;
+		// console.log(this.properties.speed.y);
+		this.properties.speed.y -= y;
     }
 
     die() {
