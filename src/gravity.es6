@@ -4,9 +4,7 @@ export default class Gravity {
         this.object = object;
     }
 
-    gravitate(){
-        this.object.move(0,this.object.properties.speed.y - this.strength); //hij beweegt sowieso naar beneden (als je in de lucht zit, beweeg je sowieso naar beneden)
+    gravitate() {
+        this.object.move(0, this.strength); //hij beweegt sowieso naar beneden (als je in de lucht zit, beweeg je sowieso naar beneden)
     }
-
-
 }

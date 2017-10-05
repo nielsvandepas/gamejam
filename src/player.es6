@@ -19,8 +19,8 @@ export default class Player {
 	updatePosition() { //functie die positie update
 		this.properties.gravity.gravitate(); //voert de gravity functie uit, van gravity.es6
 
-		this.properties.x = this.properties.speed.x;
-		this.properties.y = this.properties.speed.y;
+		this.properties.x += this.properties.speed.x;
+		this.properties.y += this.properties.speed.y;
 	}
 
 	getPosition() {
@@ -42,7 +42,7 @@ export default class Player {
 
 	collided(collider) {
         if(typeof collider === "obstacle"){ // als speler collide met een obstacle
-            this.properties.speed = 0;
+            this.properties.speed.y = 0;
             this.die();
         }
 
