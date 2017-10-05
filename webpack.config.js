@@ -1,10 +1,10 @@
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-	entry: './src/script.es6',
+	entry: './src/world.es6',
 	output: {
 		path: __dirname + '/dist',
-		filename: 'script.js'
+		filename: 'game.js'
 	},
 	module: {
 		loaders: [{
