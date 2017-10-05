@@ -1,15 +1,14 @@
 import Player from './player.es6';
-import Floor from './floor.es6';
 import Physics from './physics.es6';
 import Obstacle from './obstacle.es6';
 import Input from './input.es6';
 
 export default class World {
 	constructor() {
-		this.player = new Player(); // player en floor implementeren in world
-        this.floor = new Floor();
+		this.player = new Player(); // player implementeren in world
 		this.physics = new Physics();
 		this.input = new Input(this.player);
+
 		this.registerColliders();
     }
 
