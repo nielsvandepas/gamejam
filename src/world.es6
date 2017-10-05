@@ -19,5 +19,9 @@ export default class World {
 
 	update() {
 		this.physics.checkCollisions();
+
+		this.obstacles.forEach((obstacle) => {
+			obstacle.move();
+		});
 	}
 }

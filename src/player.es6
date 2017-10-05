@@ -6,7 +6,7 @@ export default class Player {
 			x: 40,
 			y: 100,
 			width: 10,
-			height: 10,
+			height: 20,
 			color: '#000000',
 			jumping: false,
 			gravity: new Gravity(this, 0.2), //constructor van gravity.es6 bestand
@@ -25,7 +25,7 @@ export default class Player {
 
 			this.properties.y = window.innerHeight - this.properties.height;
 
-			this.properties.jumping = false; //springen om true te maken, gevallen zijn voor false 
+			this.properties.jumping = false; //springen om true te maken, gevallen zijn voor false
 		}
 
 	}

@@ -16,4 +16,8 @@ export default class Obstacle {
     collided(collider){
 
 	}
+
+	move() {
+		this.properties.x -= this.properties.speed;
+	}
 }

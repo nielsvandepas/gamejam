@@ -8,15 +8,18 @@ export default class EnemySpawner {
 
 		this.difficulty = 1;
 
-		progress.registerCallback(this.spawnEnemy);
+		progress.registerCallback((time) => { this.spawnEnemy(time); });
 	}
 
 	spawnEnemy(time) {
 		if (time % 10 === 0)
 			this.difficulty++;
 
+		if (time % 2 === 1)
+			return;
+
 		let newObstacle = new Obstacle(this.difficulty);
-		physics.registerCollider(newObstacle);
+		this.physics.registerCollider(newObstacle);
 
 		this.obstacles.push(newObstacle);
 	}
