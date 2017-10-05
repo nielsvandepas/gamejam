@@ -28,7 +28,7 @@ export default class Physics {
 				collider.collided(collidingObject);
 				collidingObject.collided(collider);
 
-				checkCache.pop(collidingObject);
+				checkCache.pop(collidingObject); // pop haalt iets uit je array 
 			}
 
 			checkCache.pop(collider);

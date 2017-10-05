@@ -2,14 +2,11 @@ export default class Floor {
 	constructor() {
         this.properties = {
             x: 0,
-            y: window.innerHeight - 40,
+            y: window.innerHeight - 100,
             width: window.innerWidth,
-            height: 40,
+            height: 100,
             color: "green"
         }
     }
 
-    collided(collider){
-		console.log('colliding with ' + collider.properties.color);
-    }
 }

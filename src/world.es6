@@ -14,7 +14,6 @@ export default class World {
 
     registerColliders(){ //registreren als collider
         this.physics.registerCollider(this.player);
-        this.physics.registerCollider(this.floor);
         // this.physics.registerCollider(this.obstacles);
 	}
 

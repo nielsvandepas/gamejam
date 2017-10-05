@@ -4,7 +4,7 @@ export default class Player {
 	constructor() {
 		this.properties = {
 			x: 0,
-			y: 0,
+			y: 100,
 			width: 10,
 			height: 10,
 			color: '#000000',
@@ -18,9 +18,12 @@ export default class Player {
 
 	updatePosition() { //functie die positie update
 		this.properties.gravity.gravitate(); //voert de gravity functie uit, van gravity.es6
-
 		this.properties.x += this.properties.speed.x;
 		this.properties.y += this.properties.speed.y;
+		if (this.properties.y > window.innerHeight - 100 - this.properties.height){
+			this.properties.y = window.innerHeight - 100 - this.properties.height;
+		}
+
 	}
 
 	getPosition() {
@@ -47,7 +50,8 @@ export default class Player {
         }
 
         if (collider.constructor.name === "Floor"){ // als speler collide met floor
-            this.properties.speed.y = 0;
+			this.properties.speed.y = 0;
+			console.log("has collided")
         }
 	}
 }
