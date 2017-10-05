@@ -10,14 +10,13 @@ export default class StageHand {
 	}
 
 	draw() {
-		console.log("draw");
 		this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 
 		let playerPosition = this.world.player.getPosition(); //variabele voor functie die in player zit
 		this.context.fillRect(playerPosition.x,playerPosition.y,this.world.player.properties.width,this.world.player.properties.height); // player zit in world
 
 		window.requestAnimationFrame(() => {
-			draw();
+			this.draw();
 		});
 	}
 }
