@@ -33,9 +33,11 @@ export default class Player {
 	}
 
 	move(x, y) {
+		this.properties.speed.x += x;
+		this.properties.speed.y += y;
     }
 
-    die(){
+    die() {
     }
 
 	collided(collider) {
