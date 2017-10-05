@@ -6,9 +6,9 @@ export default class Input{
         console.log ('keydown');
 
         if (e.keyCode == 38 | e.keyCode == 32) // spatie of pijltoets omhoog
-            this.player.move('up');
+            this.player.move(5,0);
         if (e.keyCode == 40)
-            this.player.move('down');
+            this.player.move(0,5);
 
         let position = this.player.getPosition();
 

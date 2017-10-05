@@ -33,10 +33,19 @@ export default class Player {
 	}
 
 	move(x, y) {
-
-	}
+    }
+    
+    die(){
+    }
 
 	collided(collider) {
+        if(typeof collider === "obstacle"){ // als speler collide met een obstacle
+            this.properties.speed = 0;
+            die();
+        }
 
+        if (typeof collider === "floor"){ // als speler collide met floor
+            this.properties.speed.y = 0;
+        }
 	}
 }
