@@ -3,7 +3,7 @@ import Gravity from './gravity.es6';
 export default class Player {
 	constructor() {
 		this.properties = {
-			x: 0,
+			x: 40,
 			y: 100,
 			width: 10,
 			height: 10,
@@ -25,7 +25,7 @@ export default class Player {
 
 			this.properties.y = window.innerHeight - 100 - this.properties.height;
 
-			this.properties.jumping = false;
+			this.properties.jumping = false; //springen om true te maken, gevallen zijn voor false 
 		}
 
 	}
