@@ -7,5 +7,9 @@ export default class Floor {
             height: 40,
             color: "green"
         }
-	}
+    }
+    
+    collided(collider){
+            
+    }
 }

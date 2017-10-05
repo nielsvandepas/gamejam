@@ -3,7 +3,7 @@ import Floor from './floor.es6';
 
 export default class World {
 	constructor() {
-		this.player = new Player();
+		this.player = new Player(); // player en floor implementeren in world
 		this.floor = new Floor();
 	}
 }
