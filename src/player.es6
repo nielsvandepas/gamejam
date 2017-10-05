@@ -24,7 +24,7 @@ export default class Player {
 	}
 
 	getPosition() {
-		updatePosition(); //update positie in het verkrijgen van de positie (wordt weer gebruikt in stagehand)
+		this.updatePosition(); //update positie in het verkrijgen van de positie (wordt weer gebruikt in stagehand)
 
 		return {
 			x: this.properties.x,
@@ -34,14 +34,14 @@ export default class Player {
 
 	move(x, y) {
     }
-    
+
     die(){
     }
 
 	collided(collider) {
         if(typeof collider === "obstacle"){ // als speler collide met een obstacle
             this.properties.speed = 0;
-            die();
+            this.die();
         }
 
         if (typeof collider === "floor"){ // als speler collide met floor
