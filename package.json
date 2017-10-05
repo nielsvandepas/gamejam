@@ -1,11 +1,15 @@
 {
-  "name": "boilerplate",
+  "name": "gamejam",
   "version": "1.0.0",
-  "description": "An ES8 boilerplate",
+  "description": "The CT Gamejam",
   "main": "index.js",
   "scripts": {
     "start": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+	  "type": "git",
+	  "url": "https://github.com/nielsvandepas/gamejam.git"
   },
   "author": "Niels van de Pas <ik@nielsvandepas.nl>, Nienke van Poppel <ncjpoppe@avans.nl>",
   "license": "ISC",
