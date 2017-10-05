@@ -1,26 +1,16 @@
-export default class Progress{
+export default class Progress {
     constructor() {
-    const totalSeconds = 0;
-    
-    }
-    setTime(){
-        ++totalSeconds;
-        secondsLabel.innerHTML = pad(totalSeconds%60);
-        minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
-    }
+		this.totalSeconds = 0;
 
-    pad(val)
-    {
-        const valString = val + "";
-        if(valString.length < 2)
-        {
-            return "0" + valString;
-        }
-        else
-        {
-            return valString;
-        }
-    }
-    
+		setTimeout(incrementTime, 1000);
+	}
 
+	incrementTime() {
+		this.totalSeconds++;
+		setTimeout(incrementTime, 1000);
+	}
+
+	getCurrentTime() {
+		return this.totalSeconds;
+	}
 }
