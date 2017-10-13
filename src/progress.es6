@@ -3,7 +3,7 @@ export default class Progress {
 		this.totalSeconds = 0;
 		this.callbacks = [];
 
-		setTimeout(() => {this.incrementTime();}, 1000);
+		this.timeOut= setTimeout(() => {this.incrementTime();}, 1000);
 	}
 
 	registerCallback(callback) {
@@ -16,7 +16,7 @@ export default class Progress {
 		console.log(this.callbacks);
 		this.callbacks.forEach((callback) => { callback(this.totalSeconds); });
 
-		setTimeout(() => {this.incrementTime();}, 1000);
+		this.timeOut = setTimeout(() => {this.incrementTime();}, 1000);
 	}
 
 	getCurrentTime() {
