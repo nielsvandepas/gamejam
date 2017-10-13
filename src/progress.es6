@@ -13,7 +13,6 @@ export default class Progress {
 	incrementTime() {
 		this.totalSeconds++;
 
-		console.log(this.callbacks);
 		this.callbacks.forEach((callback) => { callback(this.totalSeconds); });
 
 		setTimeout(() => {this.incrementTime();}, 1000);

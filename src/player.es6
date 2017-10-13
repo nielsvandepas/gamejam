@@ -47,7 +47,7 @@ export default class Player {
 		console.log('u died, u f*cking mron!');
     }
 
-	collided(collider) {
+	collided(collider, physics) {
 		console.log('collided');
 
         if(collider.constructor.name === "Obstacle") { // als speler collide met een obstacle

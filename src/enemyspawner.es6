@@ -6,7 +6,7 @@ export default class EnemySpawner {
 		this.physics = physics;
 		this.progress = progress;
 
-		this.difficulty = 10;
+		this.difficulty = 1;
 
 		progress.registerCallback((time) => { this.spawnEnemy(time); });
 	}
