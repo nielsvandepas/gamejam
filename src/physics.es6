@@ -26,7 +26,7 @@ export default class Physics {
 				if (collider === element || element.properties.collisionChecked)
 					return false;
 
-				let left = collider.properties.x + collider.properties.width >= element.properties.x;
+				let left = collider.properties.x + collider.properties.width >= element.properties.x; // checken of collide ...
 				let right = collider.properties.x <= element.properties.x + element.properties.width;
 				let top = collider.properties.y + collider.properties.height >= element.properties.y;
 				let bottom = collider.properties.y <= element.properties.y + element.properties.height;
