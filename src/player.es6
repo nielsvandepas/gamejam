@@ -4,8 +4,8 @@ import Input from './input.es6';
 export default class Player {
 	constructor() {
 		this.properties = {
-			x: 40,
-			y: 100,
+			x: 100,
+			y: window.innerHeight,
 			width: 10,
 			height: 20,
 			color: '#000000',
@@ -45,6 +45,19 @@ export default class Player {
 		this.properties.speed.y -= y;
 	
     }
+
+	duck() {
+		if (this.isDucking)
+			return;
+
+		this.isDucking = true;
+		this.properties.height /= 2;
+	}
+
+	rise() {
+		this.isDucking = false;
+		this.properties.height *= 2;
+	}
 
     die() {
 		 this.properties.speed.y = 0;
