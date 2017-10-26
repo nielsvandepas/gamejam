@@ -33,26 +33,24 @@ export default class StageHand {
 		this.context.font = "20px Comic Sans MS";
 		this.context.fillText(this.world.progress.getCurrentTime(),this.canvas.width - 75, 75);
 		
-		if (this.world.player.properties.jumping == true){ 
+		if(this.world.player.properties.jumping !== true || this.world.player.properties.isDucking !== true){
 			this.world.player.properties.sy = 0;
 		}
 
-		if(this.world.player.properties.jumping !== true || this.world.player.properties.isDucking !== true){
+	
+
+		if (this.world.player.jumping == true){
 			this.world.player.properties.sy = 40;
 		}
 
 		if (this.world.player.isDead == false){
 			window.requestAnimationFrame(() => {
 				this.draw();
-			});	
-		}
-		if (this.world.player.isDead == true){
-			console.log(this)
+			});
+		} else {
 			this.context.font = "20px Comic Sans MS";
 			this.context.textAlign = "center";
 			this.context.fillText("GAME OVER!",this.canvas.width/2,this.canvas.height/2);
-			
-			
 		}
 	}
 }
