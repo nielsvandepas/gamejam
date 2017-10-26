@@ -6,18 +6,23 @@ export default class Player {
 		this.properties = {
 			x: 100,
 			y: window.innerHeight,
+			sx: 0,
+			sy: 0,
 			width: 10,
 			height: 20,
 			color: '#000000',
 			jumping: false,
+			img: new Image(),
 			gravity: new Gravity(this, 0.2), //constructor van gravity.es6 bestand
 			speed: {
 				x: 0,
 				y: 0
 			}
+			
 		}
 		this.input= new Input();
 		this.isDead = false;
+		this.properties.img.src = "sonic.png";
 	}
 
 	updatePosition() { //functie die positie update
