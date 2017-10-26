@@ -24,4 +24,5 @@ export default class World {
 			obstacle.move();
 		});
 	}
+	
 }

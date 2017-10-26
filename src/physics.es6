@@ -22,7 +22,7 @@ export default class Physics {
 		this.colliders.forEach((collider) => {
 			collider.properties.collisionChecked = true;
 
-			let collidingObject = this.colliders.fiand((element) => {
+			let collidingObject = this.colliders.find((element) => {
 				if (collider === element || element.properties.collisionChecked)
 					return false; // als speler met zichzelf collide (wat elke keer gebeurt eig) dan returnt hij false
 

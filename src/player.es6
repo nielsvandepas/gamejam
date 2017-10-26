@@ -1,4 +1,5 @@
 import Gravity from './gravity.es6';
+import Input from './input.es6';
 
 export default class Player {
 	constructor() {
@@ -15,6 +16,7 @@ export default class Player {
 				y: 0
 			}
 		}
+		this.
 	}
 
 	updatePosition() { //functie die positie update
@@ -41,10 +43,13 @@ export default class Player {
 
 	move(y) {
 		this.properties.speed.y -= y;
+	
     }
 
     die() {
-		console.log('u died, u f*cking aron!'); 
+		 this.properties.speed.y = 0;
+		 this.properties.y = 100;
+		
     }
 
 	collided(collider, physics) {
