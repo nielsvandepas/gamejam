@@ -17,6 +17,7 @@ export default class Player {
 			}
 		}
 		this.input= new Input();
+		this.isDead = false;
 	}
 
 	updatePosition() { //functie die positie update
@@ -61,8 +62,10 @@ export default class Player {
 
     die() {
 		 this.properties.speed.y = 0;
-		 this.properties.y = 100;
+		 this.properties.y = this.properties.y;
 		 this.input.disable(); //input wordt disabled
+		 this.isDead = true; // flag voor dat ie dood is zodat ik er bij draw in kan 
+		
     }
 
 	collided(collider, physics) {

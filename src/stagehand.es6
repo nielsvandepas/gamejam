@@ -26,13 +26,22 @@ export default class StageHand {
 		this.context.fillStyle = this.world.player.properties.color;
 		this.context.fillRect(playerPosition.x,playerPosition.y,this.world.player.properties.width,this.world.player.properties.height); // player zit in world
 		
-		this.context.fillText(this.world.progress.getCurrentTime(),this.canvas.width - 75, 75);
 		this.context.font = "20px Comic Sans MS";
+		this.context.fillText(this.world.progress.getCurrentTime(),this.canvas.width - 75, 75);
 		
-		
-		window.requestAnimationFrame(() => {
-			this.draw();
-		});
+		if (this.world.player.isDead == false){
+			window.requestAnimationFrame(() => {
+				this.draw();
+			});	
+		}
+		if (this.world.player.isDead == true){
+			console.log(this)
+			this.context.font = "20px Comic Sans MS";
+			this.context.textAlign = "center";
+			this.context.fillText("GAME OVER!",this.canvas.width/2,this.canvas.height/2);
+			
+			
+		}
 	}
 }
 
