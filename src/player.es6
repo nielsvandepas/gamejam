@@ -8,10 +8,11 @@ export default class Player {
 			y: window.innerHeight,
 			sx: 0,
 			sy: 0,
-			width: 10,
-			height: 20,
+			width: 40,
+			height: 40,
 			color: '#000000',
 			jumping: false,
+			isDucking: false,
 			img: new Image(),
 			gravity: new Gravity(this, 0.2), //constructor van gravity.es6 bestand
 			speed: {

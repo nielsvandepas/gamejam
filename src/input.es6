@@ -9,6 +9,7 @@ export default class Input{
 
 			if ((e.keyCode == 38 || e.keyCode == 32) && !this.player.properties.jumping) {// spatie of pijltoets omhoog
 				this.player.properties.jumping = true;
+				console.log("jump");
 				this.player.move(7);
 			}
 			else if (e.keyCode == 40)
