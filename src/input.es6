@@ -25,7 +25,7 @@ export default class Input{
 		this.enabled = true;
 	}
 
-	disabled(){
+	disable(){
 		this.enabled = false;
 	}
 }

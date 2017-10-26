@@ -16,7 +16,7 @@ export default class Player {
 				y: 0
 			}
 		}
-		this.
+		this.input= new Input();
 	}
 
 	updatePosition() { //functie die positie update
@@ -62,7 +62,7 @@ export default class Player {
     die() {
 		 this.properties.speed.y = 0;
 		 this.properties.y = 100;
-		
+		 this.input.disable(); //input wordt disabled
     }
 
 	collided(collider, physics) {
