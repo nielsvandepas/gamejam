@@ -12,7 +12,7 @@ export default class Player {
 			height: 40,
 			color: '#000000',
 			jumping: false,
-			isDucking: false,
+			ducking: false,
 			img: new Image(),
 			gravity: new Gravity(this, 0.2), //constructor van gravity.es6 bestand
 			speed: {
@@ -22,18 +22,26 @@ export default class Player {
 			
 		}
 		this.isDead = false;
-		this.properties.img.src = "sonic.png";
+		this.properties.img.src = "sonic2.png";
 		this.input = new Input(this);
 	}
 
 	updatePosition() { //functie die positie update
 		this.properties.gravity.gravitate(); //voert de gravity functie uit, van gravity.es6
 		this.properties.y += this.properties.speed.y;
+		
+		if (this.properties.jumping == false && this.properties.ducking == false){
+			this.properties.height = 40;
+		}
+		else{
+			this.properties.height = 30; //beter afsnijden (hij wordt kleiner bij jumping of ducking)
+		}
+
 		if (this.properties.y > window.innerHeight - this.properties.height){
 			this.properties.speed.y = 0;
 
 			this.properties.y = window.innerHeight - this.properties.height;
-
+			
 			this.properties.jumping = false; //springen om true te maken, gevallen zijn voor false
 		}
 
@@ -50,20 +58,20 @@ export default class Player {
 
 	move(y) {
 		this.properties.speed.y -= y;
-
     }
 
 	duck() {
-		if (this.isDucking)
+		if (this.properties.ducking)
 			return;
 
-		this.isDucking = true;
-		this.properties.height /= 2;
+		this.properties.ducking = true;
+		this.properties.height = 27;
 	}
 
 	rise() {
-		this.isDucking = false;
-		this.properties.height *= 2;
+		
+		this.properties.ducking = false;
+		this.properties.height = 40;
 	}
 
     die() {
