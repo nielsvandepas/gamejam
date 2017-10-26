@@ -18,9 +18,25 @@ export default class StageHand {
 		this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 
 		this.world.obstacles.forEach((obstacle) => {
-			this.context.fillStyle = obstacle.properties.color;
-			this.context.fillRect(obstacle.properties.x,obstacle.properties.y,obstacle.properties.width,obstacle.properties.height); // player zit in world
+			if(obstacle.properties.flying == true){
+				console.log("isflying")
+				this.context.drawImage(obstacle.properties.img2, obstacle.properties.sx, obstacle.properties.sy, 40,48, 
+					obstacle.properties.x,obstacle.properties.y,40,48); 
+					obstacle.properties.sx = obstacle.properties.sx + 40;
+					if(obstacle.properties.sx > 9 * 40){
+						obstacle.properties.sx = 0;
+					}
+			}
+			else{
+				this.context.drawImage(obstacle.properties.img1, obstacle.properties.sx, obstacle.properties.sy, 45,45, 
+					obstacle.properties.x,obstacle.properties.y,45,45); 
+					obstacle.properties.sx = obstacle.properties.sx + 45;
+					if(obstacle.properties.sx > 9 * 45 ){
+						obstacle.properties.sx = 0;
+					}
+			}
 		});
+		
 
 		let playerPosition = this.world.player.getPosition(); //variabele voor functie die in player zit
 		this.context.fillStyle = this.world.player.properties.color;
@@ -30,15 +46,13 @@ export default class StageHand {
 		if (this.world.player.properties.sx > 7 * 40){
 			this.world.player.properties.sx = 0;
 		}
-		this.context.font = "20px Comic Sans MS";
+		this.context.font = "20px NiseSegaSonic";
 		this.context.fillText(this.world.progress.getCurrentTime(),this.canvas.width - 75, 75);
 		
 		if(this.world.player.properties.jumping !== true || this.world.player.properties.ducking !== true){
 			console.log("staand");
 			this.world.player.properties.sy = 30;
 		}
-
-	
 
 		if (this.world.player.properties.jumping == true || this.world.player.properties.ducking == true){
 			console.log("juuuuumping")
@@ -50,7 +64,7 @@ export default class StageHand {
 				this.draw();
 			});
 		} else {
-			this.context.font = "20px Comic Sans MS";
+			this.context.font = "150px NiseSegaSonic";
 			this.context.textAlign = "center";
 			this.context.fillText("GAME OVER!",this.canvas.width/2,this.canvas.height/2);
 		}
