@@ -40,7 +40,7 @@ export default class StageHand {
 
 	
 
-		if (this.world.player.properties.jumping == true){
+		if (this.world.player.properties.jumping == true || this.world.player.properties.ducking == true){
 			console.log("juuuuumping")
 			this.world.player.properties.sy = 0;
 		}

@@ -63,9 +63,8 @@ export default class Player {
 	duck() {
 		if (this.properties.ducking)
 			return;
-
 		this.properties.ducking = true;
-		this.properties.height = 27;
+		this.properties.height = 30;
 	}
 
 	rise() {
