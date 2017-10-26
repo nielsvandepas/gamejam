@@ -8,10 +8,10 @@ export default class Physics {
 	}
 
 	removeCollider(collider) {
-		console.log(collider);
-		console.log(this.colliders);
+		// console.log(collider);
+		// console.log(this.colliders);
 		this.colliders.pop(collider);
-		console.log(this.colliders);
+		// console.log(this.colliders);
 	}
 
 	checkCollisions() {

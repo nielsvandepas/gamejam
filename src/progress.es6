@@ -3,7 +3,13 @@ export default class Progress {
 		this.totalSeconds = 0;
 		this.callbacks = [];
 
-		this.timeOut= setTimeout(() => {this.incrementTime();}, 100);
+		this.timeout = setTimeout(() => { this.incrementTime(); }, 1000);
+
+		this.score = 0;
+		this.scorePhase = 0;
+
+		this.startDifficulty = 3;
+		this.difficulty = this.startDifficulty;
 	}
 
 	registerCallback(callback) {
@@ -15,7 +21,19 @@ export default class Progress {
 
 		this.callbacks.forEach((callback) => { callback(this.totalSeconds); });
 
-		this.timeOut = setTimeout(() => {this.incrementTime();}, 100);
+		this.timeout = setTimeout(() => { this.incrementTime(); }, 1000);
+
+		this.incrementScore();
+	}
+
+	incrementScore() {
+		this.score += this.difficulty - this.startDifficulty + 1;
+		this.scorePhase += this.difficulty - this.startDifficulty + 1;
+
+		if (this.scorePhase >= 100) {
+			this.difficulty++;
+			this.scorePhase = 0;
+		}
 	}
 
 	getCurrentTime() {
