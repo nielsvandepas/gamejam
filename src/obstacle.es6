@@ -10,7 +10,7 @@ export default class Obstacle {
 		}
 
         this.properties.x = window.innerWidth - this.properties.width;
-        this.properties.y = window.innerHeight - this.properties.height - (fly ? 15 : 0);
+        this.properties.y = window.innerHeight - this.properties.height - (fly ? 35 : 0);
     }
 
     collided(collider, physics) {
