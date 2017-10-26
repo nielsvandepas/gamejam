@@ -24,10 +24,15 @@ export default class StageHand {
 
 		let playerPosition = this.world.player.getPosition(); //variabele voor functie die in player zit
 		this.context.fillStyle = this.world.player.properties.color;
-		this.context.fillRect(playerPosition.x,playerPosition.y,this.world.player.properties.width,this.world.player.properties.height); // player zit in world
+		this.context.drawImage(this.world.player.properties.img, this.world.player.properties.sx, this.world.player.properties.sy, 40,40, playerPosition.x,playerPosition.y,40,40); // player zit in world
+		this.world.player.properties.sx = this.world.player.properties.sx+170;
 
 		this.context.font = "20px Comic Sans MS";
 		this.context.fillText(this.world.progress.getCurrentTime(),this.canvas.width - 75, 75);
+
+		if (this.world.player.jumping == true){
+			this.world.player.properties.sy = 40;
+		}
 
 		if (this.world.player.isDead == false){
 			window.requestAnimationFrame(() => {

@@ -9,7 +9,6 @@ export default class World {
 	constructor() {
 		this.player = new Player(); // player implementeren in world
 		this.physics = new Physics();
-		this.input = new Input(this.player);
 		this.progress = new Progress();
 		this.obstacles = [];
 		this.enemySpawner = new EnemySpawner(this.obstacles, this.physics, this.progress);
@@ -24,5 +23,5 @@ export default class World {
 			obstacle.move();
 		});
 	}
-	
+
 }
