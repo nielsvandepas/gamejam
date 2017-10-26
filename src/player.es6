@@ -44,7 +44,7 @@ export default class Player {
     }
 
     die() {
-		console.log('u died, u f*cking mron!');
+		console.log('u died, u f*cking aron!'); 
     }
 
 	collided(collider, physics) {

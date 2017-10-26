@@ -29,7 +29,7 @@ export default class StageHand {
 		this.context.fillText(this.world.progress.getCurrentTime(),this.canvas.width - 75, 75);
 		this.context.font = "20px Comic Sans MS";
 		
-
+		
 		window.requestAnimationFrame(() => {
 			this.draw();
 		});
