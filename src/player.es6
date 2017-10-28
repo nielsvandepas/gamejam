@@ -78,7 +78,12 @@ export default class Player {
 		 this.properties.y = this.properties.y;
 		 this.input.disable(); //input wordt disabled
 		 this.isDead = true; // flag voor dat ie dood is zodat ik er bij draw in kan
-
+		
+		 window.addEventListener("keydown", (e)=>{
+			if (e.keyCode == 32){
+				location.reload();
+			}
+		 });
     }
 
 	collided(collider, physics) {

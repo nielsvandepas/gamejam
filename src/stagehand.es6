@@ -46,8 +46,9 @@ export default class StageHand {
 		if (this.world.player.properties.sx > 7 * 40){
 			this.world.player.properties.sx = 0;
 		}
+		this.context.fillStyle = "#2040c0";
 		this.context.font = "20px NiseSegaSonic";
-		this.context.fillText(this.world.progress.getCurrentTime(),this.canvas.width - 75, 75);
+		this.context.fillText(Math.round(this.world.progress.getCurrentTime()),this.canvas.width - 75, 75);
 		
 		if(this.world.player.properties.jumping !== true || this.world.player.properties.ducking !== true){
 			console.log("staand");
@@ -65,8 +66,12 @@ export default class StageHand {
 			});
 		} else {
 			this.context.font = "150px NiseSegaSonic";
+			this.context.fillStyle = "#2040c0";
 			this.context.textAlign = "center";
 			this.context.fillText("GAME OVER!",this.canvas.width/2,this.canvas.height/2);
+			this.context.font = "50px NiseSegaSonic";
+			this.context.fillText("press space to restart ",this.canvas.width/2,(this.canvas.height+150) /2);
+			
 		}
 	}
 }
