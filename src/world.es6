@@ -10,15 +10,14 @@ export default class World {
 		this.player = new Player(); // player implementeren in world
 		this.physics = new Physics();
 		this.progress = new Progress();
-		this.obstacles = [];
+		this.obstacles = []; //array aanmaken voor obstacles
 		this.enemySpawner = new EnemySpawner(this.obstacles, this.physics, this.progress);
 
 		this.physics.registerCollider(this.player);
     }
 
 	update() {
-		this.physics.checkCollisions();
-
+		this.physics.checkCollisions(); 
 		this.obstacles.forEach((obstacle) => {
 			obstacle.move();
 		});

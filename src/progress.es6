@@ -19,9 +19,9 @@ export default class Progress {
 	incrementTime() {
 		this.totalSeconds++;
 
-		this.callbacks.forEach((callback) => { callback(this.totalSeconds); });
+		this.callbacks.forEach((callback) => { callback(this.totalSeconds); }); //wordt gebruikt voor enemyspawner
 
-		this.timeout = setTimeout(() => { this.incrementTime(); }, 500);
+		this.timeout = setTimeout(() => { this.incrementTime(); }, 500); 
 
 		this.incrementScore();
 	}
@@ -37,6 +37,6 @@ export default class Progress {
 	}
 
 	getCurrentTime() {
-		return this.totalSeconds / 2;
+		return this.totalSeconds / 2; //elke seconde (anders is het elke halve seconde)
 	}
 }
